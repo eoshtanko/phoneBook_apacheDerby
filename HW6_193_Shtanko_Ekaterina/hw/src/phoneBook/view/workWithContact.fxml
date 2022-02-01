@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="phoneBook.controller.workWithContact.WorkWithContactController">
+    <GridPane layoutX="1.0" layoutY="-27.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-border-color: #bc8f8f; -fx-border-width: 2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="293.0" minWidth="10.0" prefWidth="154.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="470.0" minWidth="10.0" prefWidth="429.0" />
+        </columnConstraints>
+        <rowConstraints>
+         <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="72.0" minHeight="55.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="209.0" minHeight="10.0" prefHeight="142.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="142.0" minHeight="6.0" prefHeight="23.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <padding>
+            <Insets right="8.0" />
+        </padding>
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="300.0" text="Имя*" textAlignment="CENTER" GridPane.rowIndex="1" />
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="300.0" text="Фамилия*" textAlignment="CENTER" GridPane.rowIndex="2" />
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="300.0" text="Отчество" textAlignment="CENTER" GridPane.rowIndex="3" />
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="300.0" text="Мобильный телефон" textAlignment="CENTER" GridPane.rowIndex="4" />
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="300.0" text="Домашний телефон" textAlignment="CENTER" GridPane.rowIndex="5" />
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="300.0" text="Адрес" textAlignment="CENTER" GridPane.rowIndex="6" />
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="300.0" text="День рождения" textAlignment="CENTER" GridPane.rowIndex="7" />
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="300.0" text="Заметки" textAlignment="CENTER" GridPane.rowIndex="8" />
+        <TextField fx:id="nameTextField" prefHeight="35.0" prefWidth="431.0" promptText="Корректная длина &gt;= 2" style="-fx-border-color: #87CEFA #87CEFA;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <TextField fx:id="surnameTextField" prefHeight="35.0" prefWidth="431.0" promptText="Корректная длина &gt;= 2" style="-fx-border-color: #87CEFA;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <TextField fx:id="patronymicTextField" prefHeight="35.0" prefWidth="431.0" promptText="Отсутствуют ограничения" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <TextField fx:id="mobilePhoneTextField" prefHeight="35.0" prefWidth="431.0" promptText="Номер телефона может начинаться с '+' и содержать от 2 до 12 цифр" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <TextField fx:id="homePhoneTextField" prefHeight="35.0" prefWidth="461.0" promptText="Номер телефона может начинаться с '+' и содержать от 2 до 12 цифр" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+        <TextField fx:id="addressTextField" prefHeight="35.0" prefWidth="461.0" promptText="Отсутствуют ограничения" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+        <DatePicker fx:id="birthdayDatePicker" prefHeight="35.0" prefWidth="472.0" promptText="Число.Месяц.Год (27.02.2001)" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+        <TextArea fx:id="noteTextArea" prefHeight="157.0" prefWidth="433.0" promptText="Напишите что-нибудь..." GridPane.columnIndex="1" GridPane.rowIndex="8" />
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
+        <buttons>
+               <Button cancelButton="true" mnemonicParsing="false" onAction="#cancelButtonAction" prefHeight="27.0" prefWidth="140.0" text="Отмена" textAlignment="CENTER" />
+               <Button defaultButton="true" mnemonicParsing="false" onAction="#saveButtonAction" prefHeight="27.0" prefWidth="140.0" text="Сохранить" />
+        </buttons>
+      </ButtonBar>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="300.0" text="Контакт" textAlignment="CENTER">
+         <font>
+            <Font name="Times New Roman" size="23.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_RIGHT" contentDisplay="TOP" prefHeight="28.0" prefWidth="432.0" text="! Имя, фамилия и хотя бы один телефон должны быть указаны." textAlignment="CENTER" textFill="ROSYBROWN" GridPane.columnIndex="1">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Label>
+    </GridPane>
+</AnchorPane>

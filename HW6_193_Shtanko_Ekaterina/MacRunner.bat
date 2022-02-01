@@ -1,0 +1,1 @@
+java --module-path "/Users/miss.ekaterina/Desktop/javafx-sdk-11.0.2/lib:/Users/miss.ekaterina/Desktop/ApacheDerby/db-derby-10.15.2.0-bin/lib" --add-modules javafx.controls,javafx.fxml,java.sql -jar HW6_193_Shtanko_Ekaterina.jar

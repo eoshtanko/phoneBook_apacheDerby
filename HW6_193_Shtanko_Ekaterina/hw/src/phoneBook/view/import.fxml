@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="400.0" style="-fx-background-color: #FFF0F5; -fx-border-color: #60bfff#60bfff;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="phoneBook.controller.workWithFiles.FileImportController">
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="28.0" prefWidth="300.0" text="Импорт" textAlignment="CENTER" textFill="#60bfff" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+      <font>
+         <Font name="Times New Roman" size="23.0" />
+      </font>
+   </Label>
+    <TextField fx:id="pathTextField" layoutX="12.0" layoutY="14.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="362.0" AnchorPane.bottomAnchor="76.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+    <ButtonBar layoutX="184.0" layoutY="63.0" prefHeight="40.0" prefWidth="171.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="194.0" AnchorPane.rightAnchor="15.0">
+        <buttons>
+            <Button mnemonicParsing="false" onAction="#cancelButtonAction" text="Отмена" />
+            <Button mnemonicParsing="false" onAction="#okButtonAction" text="Ок" />
+        </buttons>
+    </ButtonBar>
+    <Button layoutX="17.0" layoutY="72.0" mnemonicParsing="false" onAction="#findPathButtonAction" text="Выбрать файл " AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="17.0" />
+</AnchorPane>

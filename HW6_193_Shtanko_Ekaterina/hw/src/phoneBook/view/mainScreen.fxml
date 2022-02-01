@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="phoneBook.controller.mainScreen.MainScreenController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+               <menus>
+                  <Menu mnemonicParsing="false" text="Файл">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#addContactButtonAction" text="Добавить новый контакт" />
+                        <MenuItem fx:id="editMenuItem" disable="true" mnemonicParsing="false" onAction="#editContactButtonAction" text="Редактирование" />
+                        <MenuItem fx:id="deleteMenuItem" disable="true" mnemonicParsing="false" onAction="#deleteContactButtonAction" text="Удалить контакт" />
+                        <MenuItem mnemonicParsing="false" onAction="#exitButtonAction" text="Выход" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Настройки">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#importFileButtonAction" text="Импортировать" />
+                        <MenuItem mnemonicParsing="false" onAction="#exportFileButtonAction" text="Экспортировать" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Справка">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#showInfoButtonAction" text="О шедевре" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <ScrollPane accessibleRole="PARENT" fitToHeight="true" fitToWidth="true" prefViewportHeight="440.0" prefViewportWidth="600.0" BorderPane.alignment="CENTER">
+               <content>
+                  <AnchorPane>
+                     <children>
+                        <SplitPane dividerPositions="0.8838323353293414" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane>
+                                 <children>
+                                    <TableView fx:id="table" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columns>
+                                          <TableColumn text="Имя">
+                                             <cellValueFactory>
+                                                <PropertyValueFactory property="name" />
+                                             </cellValueFactory>
+                                          </TableColumn>
+                                          <TableColumn text="Фамилия">
+                                             <cellValueFactory>
+                                                <PropertyValueFactory property="surname" />
+                                             </cellValueFactory>
+                                          </TableColumn>
+                                          <TableColumn text="Отчество">
+                                             <cellValueFactory>
+                                                <PropertyValueFactory property="patronymic" />
+                                             </cellValueFactory>
+                                          </TableColumn>
+                                          <TableColumn sortable="false" text="Мобильный/домашний телефоны">
+                                             <cellValueFactory>
+                                                <PropertyValueFactory property="phone" />
+                                             </cellValueFactory>
+                                          </TableColumn>
+                                          <TableColumn text="Адрес">
+                                             <cellValueFactory>
+                                                <PropertyValueFactory property="address" />
+                                             </cellValueFactory>
+                                          </TableColumn>
+                                          <TableColumn text="День рождения">
+                                             <cellValueFactory>
+                                                <PropertyValueFactory property="birthday" />
+                                             </cellValueFactory>
+                                          </TableColumn>
+                                          <TableColumn sortable="false" text="Заметки">
+                                             <cellValueFactory>
+                                                <PropertyValueFactory property="notes" />
+                                             </cellValueFactory>
+                                          </TableColumn>
+                                       </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane maxHeight="45.0" minHeight="45.0" prefHeight="45.0">
+                                 <children>
+                                    <Button disable="true" fx:id="deleteButton" layoutX="11.0" layoutY="7.0" mnemonicParsing="false" onAction="#deleteContactButtonAction" text="Удалить" AnchorPane.bottomAnchor="4.0" AnchorPane.rightAnchor="536.5" />
+                                    <Button disable="true" fx:id="editButton" layoutX="92.0" layoutY="7.0" mnemonicParsing="false" onAction="#editContactButtonAction" text="Редактировать" AnchorPane.bottomAnchor="4.0" AnchorPane.rightAnchor="416.5" />
+                                    <Button layoutX="213.0" layoutY="7.0" mnemonicParsing="false" onAction="#addContactButtonAction" text="Добавить" AnchorPane.bottomAnchor="4.0" AnchorPane.rightAnchor="327.0" />
+                                    <Button layoutX="546.5" layoutY="7.0" mnemonicParsing="false" onAction="#searchButtonAction" text="Поиск" AnchorPane.bottomAnchor="4.0" AnchorPane.rightAnchor="13.0" />
+                                    <TextField fx:id="searchTextField" layoutX="315.0" layoutY="7.0" prefWidth="220.0" AnchorPane.bottomAnchor="4.0" AnchorPane.rightAnchor="79.0" />
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
